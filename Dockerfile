@@ -12,7 +12,7 @@ RUN curl https://getcomposer.org/installer -o composer-setup.php && php composer
 
 WORKDIR ${APP_ROOT}
 
-RUN composer create-project ludofleury/satisfy --no-dev . ${SATISFY_VERSION}
+RUN composer create-project playbloom/satisfy --no-dev . ${SATISFY_VERSION}
 
 RUN rm /usr/local/etc/php-fpm.d/www.conf.default && rm /usr/local/etc/php-fpm.d/www.conf
 COPY conf/php-fpm.conf /usr/local/etc/php-fpm.conf
