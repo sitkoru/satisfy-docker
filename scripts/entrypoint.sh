@@ -10,6 +10,8 @@ SATIS_FILE="${APP_ROOT}/satis.json"
 : ${APP_ROOT:?must be set}
 : ${SECRET:=$GENERATED_SECRET}
 : ${GITLAB_SECRET:=$GENERATED_SECRET}
+: ${GITLAB_AUTO_ADD_REPO:=false}
+: ${GITLAB_AUTO_ADD_REPO_TYPE:=gitlab}
 : ${GITHUB_SECRET:=$GENERATED_SECRET}
 : ${ADMIN_AUTH:=false}
 : ${ADMIN_USERS:=\~}
@@ -29,6 +31,8 @@ if [[ ! -e ${PARAM_FILE} ]]; then
 parameters:
   secret: "${SECRET}"
   gitlab.secret: "${GITLAB_SECRET}"
+  gitlab.auto_add_repo: "${GITLAB_AUTO_ADD_REPO}"
+  gitlab.auto_add_repo_type: "${GITLAB_AUTO_ADD_REPO_TYPE}"
   github.secret: "${GITHUB_SECRET}"
   satis_filename: "%kernel.project_dir%/satis.json"
   satis_log_path: "%kernel.project_dir%/var/satis"
