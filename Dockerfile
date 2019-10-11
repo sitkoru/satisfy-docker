@@ -22,6 +22,7 @@ RUN chown -R ${APP_USER}:${APP_USER} ${APP_ROOT}
 RUN rm ${APP_ROOT}/app/config/parameters.yml
 RUN mkdir ${APP_ROOT}/.ssh
 COPY scripts/*.sh /
+RUN chmod +x /*.sh
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/php.conf /etc/nginx/php.conf
 EXPOSE 80
