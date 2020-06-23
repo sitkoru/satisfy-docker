@@ -19,7 +19,6 @@ COPY conf/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 RUN groupadd ${APP_USER} && useradd -d ${APP_ROOT} -g ${APP_USER} ${APP_USER};
 RUN chown -R ${APP_USER}:${APP_USER} ${APP_ROOT}
-RUN rm ${APP_ROOT}/app/config/parameters.yml
 RUN mkdir ${APP_ROOT}/.ssh
 COPY scripts/*.sh /
 RUN chmod +x /*.sh
