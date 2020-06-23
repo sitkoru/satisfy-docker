@@ -4,7 +4,7 @@ set -e
 set -u
 
 GENERATED_SECRET="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
-PARAM_FILE="${APP_ROOT}/app/config/parameters.yml"
+PARAM_FILE="${APP_ROOT}/config/parameters.yml"
 SATIS_FILE="${APP_ROOT}/satis.json"
 
 : ${APP_ROOT:?must be set}
